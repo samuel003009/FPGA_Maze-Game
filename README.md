@@ -1,5 +1,7 @@
 # FPGA_Maze-Game
 
+## 使用開發板：EGO1（FPGA 晶片 Xilinx Artix-7 XC7A35T-1CSG324C）
+
 ## VGAClk252.xci : 產生VGA時脈
 將板子上的 100 MHz 時脈轉換成 VGA 需要的 25.2 MHz 像素時脈
 
