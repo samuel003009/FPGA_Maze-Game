@@ -317,3 +317,5 @@ set_property -dict {PACKAGE_PIN E7 IOSTANDARD LVCMOS33} [get_ports {vga_B_Data_p
 ```
 
 
+## 影片連結
+https://youtube.com/shorts/MUizSr8rcjg
