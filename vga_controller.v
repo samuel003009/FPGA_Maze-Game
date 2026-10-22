@@ -92,7 +92,7 @@ module VGAController
 
 	always @(posedge VGA_clk or posedge RESET) begin           //debounce 在100MHz，pixelgen跟player contrl 在25.2MHz
 		if (RESET) begin
-			db_up_reg    <= db_up;           //把tick暫存進 db_reg
+			db_up_reg    <= db_up;           //把tick暫存進 db_reg，把值存起來保存到下一個上緣觸發
 			db_down_reg  <= db_down;
 			db_left_reg  <= db_left;
 			db_right_reg <= db_right;
