@@ -54,7 +54,7 @@ module VGAController
 	db_fsmd_imp db_up_inst      //去彈跳處理
 	(      
 		.clk(CLK_100M),
-		.reset(~RESET),       //rest 為active high，所以用~RESET
+		.reset(~RESET),       //reset 為active high，所以用~RESET
 		.sw(BTN[0]),
 		.db_level(),
 		.db_tick(db_up)
