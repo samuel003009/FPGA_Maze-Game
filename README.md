@@ -3,7 +3,7 @@
 ## VGAClk252.xci : 產生VGA時脈
 ## vga_sync.v : VGA畫面顯示
 ```
-//640*480，總共 800*525 ，剩下是換行時間
+//640*480，總共 800*525 ，剩下是換列跟換一幀所需時間
 	parameter H_sync_end = 96;		
 	parameter V_sync_end = 2;		
 	parameter H_sysc_Total = 800;	
