@@ -286,3 +286,32 @@ endmodule
 
 ## vga_controller.xdc : 指定實體腳位
 指定時脈、reset、四個方向按鈕，以及 VGA 輸出對應的 FPGA 實體腳位
+
+```
+set_property IOSTANDARD LVCMOS33 [get_ports {BTN[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {BTN[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {BTN[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {BTN[3]}]
+set_property PACKAGE_PIN U4 [get_ports BTN[0]]
+set_property PACKAGE_PIN R17 [get_ports BTN[1]]
+set_property PACKAGE_PIN V1 [get_ports BTN[2]]
+set_property PACKAGE_PIN R11 [get_ports BTN[3]]
+set_property -dict {PACKAGE_PIN P17 IOSTANDARD LVCMOS33} [get_ports CLK_100M ]
+set_property -dict {PACKAGE_PIN P15 IOSTANDARD LVCMOS33} [get_ports RESET ]
+set_property -dict {PACKAGE_PIN D7 IOSTANDARD LVCMOS33} [get_ports vga_hs_pin]
+set_property -dict {PACKAGE_PIN C4 IOSTANDARD LVCMOS33} [get_ports vga_vs_pin] 
+set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS33} [get_ports {vga_R_Data_pin[0]}]
+set_property -dict {PACKAGE_PIN C6 IOSTANDARD LVCMOS33} [get_ports {vga_R_Data_pin[1]}]
+set_property -dict {PACKAGE_PIN C5 IOSTANDARD LVCMOS33} [get_ports {vga_R_Data_pin[2]}]
+set_property -dict {PACKAGE_PIN B7 IOSTANDARD LVCMOS33} [get_ports {vga_R_Data_pin[3]}]
+set_property -dict {PACKAGE_PIN B6 IOSTANDARD LVCMOS33} [get_ports {vga_G_Data_pin[0]}]
+set_property -dict {PACKAGE_PIN A6 IOSTANDARD LVCMOS33} [get_ports {vga_G_Data_pin[1]}]
+set_property -dict {PACKAGE_PIN A5 IOSTANDARD LVCMOS33} [get_ports {vga_G_Data_pin[2]}]
+set_property -dict {PACKAGE_PIN D8 IOSTANDARD LVCMOS33} [get_ports {vga_G_Data_pin[3]}]
+set_property -dict {PACKAGE_PIN C7 IOSTANDARD LVCMOS33} [get_ports {vga_B_Data_pin[0]}]
+set_property -dict {PACKAGE_PIN E6 IOSTANDARD LVCMOS33} [get_ports {vga_B_Data_pin[1]}]
+set_property -dict {PACKAGE_PIN E5 IOSTANDARD LVCMOS33} [get_ports {vga_B_Data_pin[2]}]
+set_property -dict {PACKAGE_PIN E7 IOSTANDARD LVCMOS33} [get_ports {vga_B_Data_pin[3]}]
+```
+
+
