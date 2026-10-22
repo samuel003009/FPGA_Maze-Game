@@ -1,13 +1,13 @@
 module VGASync(
 		input	clk,
 		input	reset,
-		output	reg	hsync,
-		output	reg	vsync,
+		output	reg	hsync,		// 讓螢幕知道每一列從哪裡開始
+		output	reg	vsync,		// 讓螢幕知道每一幀從哪裡開始
 		output	[9:0] pixel_x,
 		output	[9:0] pixel_y
 	);
 	
-	//640*480
+	//640*480，總共 800*525 ，剩下是換行時間
 	parameter H_sync_end = 96;		
 	parameter V_sync_end = 2;		
 	parameter H_sysc_Total = 800;	
@@ -58,15 +58,15 @@ always@(posedge clk, negedge reset)
         
         if (y_cnt == V_sysc_Total)
 			y_cnt_next = 10'd0;
-		else if(x_cnt == H_sysc_Total)
+		else if(x_cnt == H_sysc_Total)		// 一列畫到底換下一列
 			y_cnt_next = y_cnt + 1'b1;
 			
-		if (x_cnt == 11'd0)
+		if (x_cnt == 11'd0)					// 換下一列開始低電壓數96
 			hsync_next = 1'b0;
 		else if (x_cnt == H_sync_end)
 			hsync_next = 1'b1;
 			
-		if (y_cnt == 11'd0)
+		if (y_cnt == 11'd0)					// 換下一幀開始低電壓數2
 			vsync_next <= 1'b0;
 		else if(y_cnt == V_sync_end)
 			vsync_next <= 1'b1;

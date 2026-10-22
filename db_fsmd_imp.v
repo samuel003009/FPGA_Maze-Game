@@ -6,7 +6,7 @@ module db_fsmd_imp
     output reg db_level, db_tick
    );
 
-   // symbolic state declaration
+   // symbolic state declaration，英文命名方便理解
    localparam  [1:0]
                zero  = 2'b00,
                wait0 = 2'b01,

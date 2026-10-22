@@ -48,8 +48,8 @@ module PixelGen
       
     end
 
-    parameter PosX = 260;       //迷宮左上角x座標
-    parameter PosY = 180;       //迷宮左上角y座標
+    parameter PosX = 260;       //迷宮左上角x座標，(640-30*4)/2 = 260
+    parameter PosY = 180;       //迷宮左上角y座標，(480-30*4)/2 = 180
     parameter PixelSize = 4;    //每個格子的像素大小
 
     wire in_display_area = (pixel_x >= PosX && pixel_x < (PosX + 30 * PixelSize) &&
@@ -69,7 +69,7 @@ module PixelGen
         end else if (is_goal_block && reached_goal) begin
             r = 4'hF; g = 4'h0; b = 4'h0;  // 紅色終點線
         end else if (pattern[mat_y][29 - mat_x] == 1'b1) begin
-            r = 4'h0; g = 4'h0; b = 4'hF;  // 藍色牆
+            r = 4'h0; g = 4'h0; b = 4'hF;  // 藍色牆，Verilog的編號從右邊開始數，所以pattern[0][29]是地圖最左上的地方
         end else begin
             r = 4'hF; g = 4'hF; b = 4'hF;  // 白色地板
         end
