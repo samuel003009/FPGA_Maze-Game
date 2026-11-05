@@ -2,7 +2,7 @@
 
 使用開發板：EGO1（FPGA 晶片 Xilinx Artix-7 XC7A35T-1CSG324C）
 
-<img width="990" height="1760" alt="IMG_9408 (2)" src="https://github.com/user-attachments/assets/f2e64ce9-117a-4d3f-b2ac-7faa0a086933" />
+<img width="495" height="880" alt="IMG_9408 (2)" src="https://github.com/user-attachments/assets/f2e64ce9-117a-4d3f-b2ac-7faa0a086933" />
 
 
 ## VGAClk252.xci : 產生VGA時脈
